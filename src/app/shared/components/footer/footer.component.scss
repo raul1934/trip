@@ -1,0 +1,24 @@
+.footer {
+  background-color: var(--primary-color);
+  max-width: 100%;
+  user-select: none;
+  z-index: 10;
+
+  ul {
+    padding-inline-start: 0;
+    transition: all 600ms ease;
+
+    li {
+      color: #fff;
+      cursor: pointer;
+    }
+  }
+
+  img{
+    width: 110px;
+    height: 40px;
+  }
+}
+
+
+

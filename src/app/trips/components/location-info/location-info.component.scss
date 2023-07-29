@@ -1,0 +1,125 @@
+.location-info {
+  background-color: #0B131EDE;
+  height: 100%;
+  width: 360px;
+  max-width: 360px;
+  border-radius: 1rem;
+  position: relative;
+
+  &__header {
+    &__info {
+      color: #fff;
+
+      img {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        border: 1px solid #fff;
+      }
+
+      h5 {
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 17px;
+        letter-spacing: 0em;
+        text-align: left;
+      }
+
+      p {
+        font-size: 10px;
+        font-weight: 500;
+        line-height: 12px;
+        letter-spacing: 0em;
+        text-align: left;
+      }
+    }
+
+    &__icon {
+      color: #fff;
+      cursor: pointer;
+    }
+  }
+
+  &__content {
+    flex: 1;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #29384A;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #03091B;
+    }
+
+    &__info {
+      color: #fff;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 14px;
+      letter-spacing: 0em;
+      text-align: center;
+
+      a {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      &__star {
+        color: #FFD600;
+      }
+
+      &__open {
+        color: #42CF00;
+      }
+
+      &__clock {
+        color: #4B9EFF;
+        font-size: 14px;
+      }
+    }
+
+    &__desc {
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 14px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: #fff;
+    }
+
+    &__map {
+      &__content {
+        height: 160px;
+      }
+
+      p {
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 15px;
+        letter-spacing: 0em;
+        text-align: center;
+        color: #FFF;
+      }
+
+      button {
+        background-color: #5081FF;
+        border-radius: 12px;
+        min-height: 24px;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 15px;
+        letter-spacing: 0em;
+        text-align: center;
+        color: #FFF;
+        border: none;
+      }
+    }
+  }
+}
+

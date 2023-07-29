@@ -1,0 +1,33 @@
+<drag-scroll class="nav-location">
+  <div drag-scroll-item>
+    <div class="d-flex gap-1">
+      <div class="d-flex gap-1 pl-3 pr-2 location" (click)="seeAllCliked.emit()">
+        <i class="ICON-SIT03_ITINERARY location__icon"></i>
+        <div class="d-flex flex-column">
+          <span class="location__title">See All</span>
+          <span class="location__subtitle"><strong>activities</strong></span>
+        </div>
+      </div>
+      <div class="d-flex align-items-center justify-content-center pl-1 pr-1 mt-2 location">
+        <i class="ICON-SIT05_RIGHT location__icon"></i>
+      </div>
+    </div>
+  </div>
+  <ng-container *ngFor="let _ of [].constructor(10);let last = last; let index = index;">
+    <div drag-scroll-item>
+      <div class="d-flex gap-1">
+        <div class="d-flex gap-1 pl-3 pr-2 location" (click)="indexClicked(index)" [class.location--selected]="index  === _index">
+          <i class="ICON-PIN1_Normal location__icon"></i>
+          <div class="d-flex flex-column">
+            <span class="location__title">Galapagos</span>
+            <span class="location__subtitle"><strong>Ecuador</strong></span>
+          </div>
+        </div>
+        <div *ngIf="!last" class="d-flex align-items-center justify-content-center pl-1 pr-1 mt-2 location">
+          <i class="ICON-SIT05_RIGHT location__icon"></i>
+        </div>
+      </div>
+    </div>
+
+  </ng-container>
+</drag-scroll>

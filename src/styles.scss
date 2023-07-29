@@ -1,0 +1,43 @@
+@use './assets/scss/icons.css';
+@use './assets/scss/normalize.css';
+@use './assets/scss/bootstrap-grid.css';
+@use './assets/scss/spacers.css';
+@use './assets/fonts/helvetica/stylesheet.css';
+@use './assets/scss/typograph.scss';
+@use './assets/scss/media-queries.scss';
+
+:root {
+  --primary-color: #0b131e;
+  --primary-green: #20ce7d;
+}
+
+* {
+  font-family: "HelveticaNeueCyr", Helvetica, sans-serif;
+  //font-family: Helvetica, Arial, sans-serif;
+}
+
+.bg-dark {
+  background-color: var(--primary-color);
+}
+
+.modal-open{
+  overflow: hidden;
+}
+
+.start-a-trip {
+  border-radius: 7px;
+  background-color: var(--primary-green);
+  padding: 0.5rem 1rem;
+  color: var(--primary-color);
+  cursor: pointer;
+  border: none;
+  color: #22262A;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  &:hover {
+    filter: brightness(1.1);
+  }
+}

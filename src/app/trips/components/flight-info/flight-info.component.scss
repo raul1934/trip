@@ -1,0 +1,186 @@
+.flight-info {
+  background-color: #0B131EDE;
+  height: 100%;
+  width: 360px;
+  max-width: 360px;
+  border-radius: 1rem;
+  backdrop-filter: blur(5px);
+
+  &__header {
+    &__info {
+      color: #fff;
+
+      img {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        border: 3px solid #fff;
+      }
+
+      h5 {
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 17px;
+        letter-spacing: 0em;
+        text-align: left;
+      }
+
+      h6 {
+        font-size: 10px;
+        font-weight: 500;
+        line-height: 12px;
+        letter-spacing: 0em;
+        text-align: left;
+      }
+    }
+
+    &__icon {
+      i {
+        color: #fff;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__content {
+    position: relative;
+    flex: 1;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #29384A;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #03091B;
+    }
+
+    &__info {
+      color: #fff;
+
+      &__airports {
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 20px;
+        letter-spacing: 0em;
+        text-align: center;
+      }
+
+      &__cities {
+        font-size: 10px;
+        font-weight: 700;
+        line-height: 10px;
+        letter-spacing: 0em;
+
+        &__origin {
+          text-align: right;
+        }
+
+        &__destination {
+          text-align: left;
+        }
+      }
+    }
+
+    &__flight {
+      &__icon {
+        font-size: 36px;
+      }
+
+      &__divider {
+        width: 2px;
+        height: 80px;
+        background-color: #fff;
+      }
+    }
+
+    &__price {
+      &__value {
+        height: 30px;
+        border-radius: 13px;
+        width: 150px;
+        background-color: #fff;
+        color: #22262A;
+
+        h6 {
+
+          font-size: 16px;
+          font-weight: 700;
+          line-height: 20px;
+          letter-spacing: 0em;
+          text-align: center;
+        }
+
+        span {
+          font-size: 10px;
+          font-weight: 700;
+          line-height: 12px;
+          letter-spacing: 0em;
+          text-align: center;
+        }
+      }
+
+      &__info {
+        p {
+          color: #F8F8F8;
+          font-size: 10px;
+          font-weight: 700;
+          line-height: 12px;
+          letter-spacing: 0em;
+          text-align: center;
+
+        }
+      }
+    }
+
+    &__qrcode {
+      ngx-qrcode {
+        overflow: hidden;
+        border-radius: 6px;
+      }
+
+      a {
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 15px;
+        letter-spacing: 0em;
+        text-align: center;
+        color: #4B9EFF;
+        text-decoration: none;
+      }
+    }
+
+    &__map {
+      &__content {
+        height: 160px;
+      }
+
+      p {
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 15px;
+        letter-spacing: 0em;
+        text-align: center;
+        color: #FFF;
+      }
+
+      button {
+        background-color: #5081FF;
+        border-radius: 12px;
+        min-height: 24px;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 15px;
+        letter-spacing: 0em;
+        text-align: center;
+        color: #FFF;
+        border: none;
+      }
+    }
+  }
+}

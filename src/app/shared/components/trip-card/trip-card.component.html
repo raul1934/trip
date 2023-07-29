@@ -1,0 +1,61 @@
+<div *ngIf="!isLoading" class="trip w-100" [ngClass]="{'trip--light-mode':lightMode}">
+  <div class="image" [ngStyle]="{'aspect-ratio': aspectRatio}">
+    <img loading="lazy"  class="w100 h-100" src="https://cdn.pixabay.com/photo/2015/01/07/15/51/woman-591576_1280.jpg" />
+    <div class="info">
+      <div class="profile">
+        <img loading="lazy" class="w100 h-100" src="https://cdn.pixabay.com/photo/2015/01/07/15/51/woman-591576_1280.jpg" />
+      </div>
+      <div class="name f-12 fw-700 text-white text-center">Elena Marinho</div>
+      <div class="d-flex align-items-center gap-1">
+        <i class="ICON-SIT03_ITINERARY f-12 text-white"></i>
+        <span class="f-12 fw-500 text-white ml-1">213 trips</span>
+      </div>
+      <div class="d-flex align-items-center gap-1">
+        <i class="ICON-SIT02_STEAL f-12 text-white"></i>
+        <span class="f-12 fw-500 text-white ml-1">178 stolen</span>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center m-3 gap-3">
+    <div class="d-flex justify-content-center align-items-center gap-1">
+      <i class="ICON-SIT04_LIKE icon"></i>
+      <span class="f-10 fw-500 text-white" [ngClass]="{'text-111B29':lightMode }">(250)</span>
+    </div>
+    <div class="d-flex justify-content-center align-items-center gap-1">
+      <i class="ICON-PIN1_Normal icon"></i>
+      <span class="f-10 fw-500 text-white" [ngClass]="{'text-111B29':lightMode }">250 Places</span>
+    </div>
+  </div>
+  <h5 class="f-14 fw-700 text-white mt-1" [ngClass]="{'text-111B29':lightMode }">Viva Paraty!</h5>
+  <p class="f-10 fw-400 m-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam viverra est et efficitur faucibus.</p>
+  <h6 class="f-12 f-500 text-white mt-2" [ngClass]="{'text-111B29':lightMode }">Paraty, Brazil</h6>
+</div>
+
+<div *ngIf="isLoading"  class="trip w-100 trip--loading">
+  <div class="image" [ngStyle]="{'aspect-ratio': aspectRatio}">
+    <div *skeleton="true;"></div>
+    <div class="info">
+      <div class="profile">
+        <div *skeleton="true;"></div>
+      </div>
+      <div class="d-flex justify-content-center">
+        <div *skeleton="true; Height:'12px'; Width:'rand'; BorderRadius: '2px';"></div>
+      </div>
+      <div class="d-flex align-items-center gap-1">
+        <div *skeleton="true; Height:'10px'; Width:'80px'; BorderRadius: '2px';"></div>
+      </div>
+      <div class="d-flex align-items-center gap-1">
+        <div *skeleton="true; Height:'10px'; Width:'80px'; BorderRadius: '2px';"></div>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center m-3 gap-3">
+    <div *skeleton="true; Height:'15px'; Width:'80%'; BorderRadius: '2px';"></div>
+  </div>
+  <div class="d-flex flex-column gap-1">
+    <div *skeleton="true; Height:'14px'; Width:'rand'; BorderRadius: '2px';" ></div>
+    <div *skeleton="true; Height:'20px'; Width:'90%'; BorderRadius: '2px';" ></div>
+    <div *skeleton="true; Height:'12px'; Width:'rand'; BorderRadius: '2px';" ></div>
+  </div>
+
+</div>

@@ -1,0 +1,13 @@
+<div class="d-flex justify-content-center align-items-center mt-4 stories">
+  <div class="carrousel-input mr-3" (click)="moveLeft()">
+    <i class="ICON-SIT06_LEFT"></i>
+  </div>
+  <drag-scroll #carrousel class="trips">
+    <div *ngFor="let _ of [].constructor(20)" drag-scroll-item class="trip-card">
+      <app-story-card class="d-flex justify-content-center px-2"></app-story-card>
+    </div>
+  </drag-scroll>
+  <div class="carrousel-input ml-3" (click)="moveRight()">
+    <i class="ICON-SIT05_RIGHT"></i>
+  </div>
+</div>

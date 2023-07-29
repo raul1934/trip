@@ -1,0 +1,57 @@
+<div @fade *ngIf="visible" (@fade.done)="closeFinished($event)" class="d-flex flex-column trip-info h-100">
+  <div class="d-flex flex-column trip-info__content m-3">
+    <div class="d-flex trip-info__content__header justify-content-between w-100">
+      <div class="trip-info__content__header__info d-flex">
+        <img loading="lazy" src="https://xyzshayari.com/wp-content/uploads/2022/08/Hiding-Face-From-Hand-Beautiful-Women-Pics-600x600.jpg">
+        <div class="ml-3">
+          <h5 class="mb-1">ARTHUR GONÇALVES</h5>
+          <div class="d-flex justify-content-between gap-2 trip-info__content__header__info__metrics">
+            <div>
+              <p class="trip-info__content__header__info__metrics__count">143</p>
+              <p class="trip-info__content__header__info__metrics__label">Trips</p>
+            </div>
+
+            <div>
+              <p class="trip-info__content__header__info__metrics__count">324</p>
+              <p class="trip-info__content__header__info__metrics__label">Followers</p>
+            </div>
+
+            <div>
+              <p class="trip-info__content__header__info__metrics__count">143</p>
+              <p class="trip-info__content__header__info__metrics__label">Stolen</p>
+            </div>
+          </div>
+          <button class="px-3 mt-3">Follow Arthur</button>
+        </div>
+      </div>
+      <div class="trip-info__content__header__icon">
+        <i class="ICON-ROT6_CLOSE" (click)="visible = false"></i>
+      </div>
+    </div>
+    <div class="mt-3 ml-3 mr-3 trip-info__content__info">
+      <h6>About this trip</h6>
+      <p class="mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis lobortis massa ante, sed rhoncus
+        nisl ullamcorper sed. Sed molestie diam purus, vitae mollis risus pellentesque lacinia. Suspendisse facilisis
+        semper enim, ut imperdiet enim egestas ut. Curabitur ac tellus ex. Nunc felis mi, dictum nec nisl eu, venenatis
+        tincidunt est. Aliquam id quam ex. Donec hendrerit turpis sit amet risus maximus egestas. Curabitur consectetur
+        lacus eget blandit accumsan. Duis accumsan enim at neque viverra congue. Pellentesque eget posuere nunc, eget
+        ornare elit. Pellentesque lobortis, arcu id sollicitudin ultrices, sapien mi semper urna, quis lobortis eros
+        tellus id magna. Curabitur eu neque ex. Suspendisse cursus libero dolor, vitae pulvinar sem tempus non. Aliquam
+        in aliquet urna, a luctus turpis.</p>
+      <p class="mt-3 trip-info__content__info__tags">Food, barcelona, spain, lot of eat, spanish food</p>
+    </div>
+    <div class="mt-3 ml-3 mr-3 trip-info__content__share">
+      <h6>SHARE TRIP</h6>
+      <a href="tripco.com\arthurgoncalves\foodfoodfood21324">tripco.com\arthurgoncalves\foodfoodfood21324</a>
+      <a class="d-flex trip-info__content__share__facebook gap-2 mt-3 align-items-center">
+        <i class="ICON-SOC4_FACEBOOK"></i>
+        Connect with Arthur on Facebook
+      </a>
+      <a class="d-flex trip-info__content__share__instagram gap-2 mt-3 align-items-center">
+        <i class="ICON-SOC2_INSTAGRAM"></i>
+        Follow Arthur on Instagram
+      </a>
+    </div>
+
+  </div>
+</div>

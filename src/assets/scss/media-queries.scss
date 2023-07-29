@@ -1,0 +1,12 @@
+@mixin media-query-sm {
+  @media (max-width: 576px) { @content; }
+}
+@mixin media-query-md {
+  @media (min-width: 768px) { @content; }
+}
+@mixin media-query-lg {
+  @media (min-width: 992px) { @content; }
+}
+@mixin media-query-xl {
+  @media (min-width: 1200px) { @content; }
+}
