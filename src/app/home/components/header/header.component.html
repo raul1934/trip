@@ -1,0 +1,78 @@
+<div class="header d-none d-lg-flex">
+  <div class="d-flex justify-content-between bg-dark w-100 px-4 py-3">
+    <ul>
+      <li>ABOUT</li>
+      <li>HOW WE WORK</li>
+      <li>FOR BUSINNESS</li>
+    </ul>
+    <img alt="logo" src="/assets/logo.svg">
+    <ul>
+      <li>
+        <button class="start-a-trip">
+          START A TRIP
+        </button>
+      </li>
+      <li>SIGN UP</li>
+      <li>LOGIN</li>
+    </ul>
+  </div>
+</div>
+
+<div class="header-fixed" [@slideInOut] *ngIf="smallBar">
+  <div class="d-none d-lg-block bg-dark">
+    <div class="d-flex justify-content-between bg-dark w-100 px-4 py-2">
+      <ul>
+        <li>ABOUT</li>
+        <li>HOW WE WORK</li>
+        <li>FOR BUSINNESS</li>
+      </ul>
+
+      <img alt="logo" src="/assets/logo.svg">
+
+      <ul>
+        <li class="start-trip">
+          <button class="start-a-trip">
+            START A TRIP
+          </button>
+        </li>
+        <li>SIGN UP</li>
+        <li>LOGIN</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="d-block d-lg-none h-100 header-fixed header-fixed__mobile" *ngIf="smallBar">
+  <div class="d-flex justify-content-between bg-dark p-3">
+    <div class="hamburguer" (click)="onHamburgerClick()" [ngClass]="{'hamburguer--open': hamburguerOpen}">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </div>
+
+    <img class="header-fixed__mobile__logo" src="/assets/logo.svg">
+
+    <img class="header-fixed__mobile__user"
+      src="https://xyzshayari.com/wp-content/uploads/2022/08/Hiding-Face-From-Hand-Beautiful-Women-Pics-600x600.jpg">
+  </div>
+  <div class="d-flex justify-content-center flex-column bg-dark p-3">
+    <h6 class="text-center f-18 fw-300 text-white">Search for trips in cities and countries</h6>
+    <app-search class="mt-3 d-flex justify-content-between w-100" [scroolOnFocus]="false"></app-search>
+  </div>
+  <div class="position-relative">
+    <div *ngIf="hamburguerOpen" [@slideLeft] class="w-100 position-absolute" style="top: 0; height: calc(100vh - 190px);">
+      <ul class="d-flex flex-column justify-content-start bg-dark p-3 h-100">
+        <li>ABOUT</li>
+        <li>HOW WE WORK</li>
+        <li>FOR BUSINNESS</li>
+        <li>
+          <button class="start-a-trip">
+            START A TRIP
+          </button>
+        </li>
+        <li>SIGN UP</li>
+        <li>LOGIN</li>
+      </ul>
+    </div>
+  </div>
+</div>

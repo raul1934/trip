@@ -1,0 +1,59 @@
+<app-header-bar class="w-100"></app-header-bar>
+<div class="main">
+  <div class="search-page ">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-xl-5">
+          <a [routerLink]="['/search/country',country]" *ngIf="city" class="d-flex gap-1 align-items-center px-2 py-1 search-page__back">
+            <i class="ICON-SIT07_BACK"></i>
+            <span>{{country | titlecase}}</span>
+          </a>
+          <div class="d-flex gap-1 align-items-baseline search-page__locations">
+            <h2 *ngIf="city">{{city | titlecase}},</h2>
+            <h3> {{country | titlecase}}</h3>
+          </div>
+          <p class="mt-2 pr-3 search-page__description">Trips, trips and a lot of trips from locals and trippers around the world</p>
+          <p class="mt-2 search-page__footer">Start a new trip in <strong>{{(city ?? country)  | titlecase}}</strong> or get inspired by another itineraries.</p>
+          <button class="mt-5 search-page__start-trip px-5 py-2"><b>Start a trip</b> in {{(city ?? country)  | titlecase}}</button>
+          <div *ngIf="!city" class="search-page__cities mt-4">
+            <p>Cities in {{country | titlecase}}</p>
+            <div class="d-flex gap-2 align-items-baseline flex-wrap mt-3">
+              <button *ngFor="let _ of [].constructor(12)" class="search-page__cities__item px-3 py-2">São Paulo</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-none d-xl-flex col-12 py-5 col-xl-7 py-lg-0">
+          <div class="d-flex gap-2">
+            <div class="trip-card" *ngFor="let trip of [].constructor(3)">
+              <app-trip-card
+                [isLoading]="loading"
+                [aspectRatio]=".6/1"
+                [lightMode]="true">
+              </app-trip-card>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="gallery w-100 mt-4 pt-5">
+      <div class="container w-100">
+        <div class="row no-gutters">
+          <div *ngFor="let item of trips" class="col-6 col-md-3 col-xl-2 p-2">
+            <div class="d-flex justify-content-center">
+              <app-trip-card></app-trip-card>
+            </div>
+          </div>
+          <ng-container *ngIf="loading">
+            <div *ngFor="let item of [].constructor(6)" class="col-6 col-md-3 col-xl-2 p-2">
+              <div class="d-flex justify-content-center">
+                <app-trip-card [isLoading]="loading"></app-trip-card>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

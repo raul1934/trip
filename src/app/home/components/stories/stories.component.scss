@@ -1,0 +1,50 @@
+.carrousel-input{
+  cursor: pointer;
+  position: relative;
+  font-size: 20px;
+  border-radius: 50%;
+  padding: .5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1E1E1E;
+  color: #fff;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.trip-card{
+  width: 25.1%;
+
+  @media (max-width: 1196px) {
+    width: 33.33%;
+  }
+  @media (max-width: 996px) {
+    width: 50%;
+  }
+  @media (max-width: 646px) {
+    width: 60%;
+  }
+}
+
+.stories{
+  margin-bottom: 10rem;
+  @media (max-width: 992px) {
+    margin-bottom: 5rem;
+  }
+}
+
+::ng-deep .drag-scroll-wrapper {
+  height: fit-content;
+}
+
+::ng-deep .drag-scroll-content::-webkit-scrollbar {
+  display: none !important;
+}
+
+::ng-deep .drag-scroll-content {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}

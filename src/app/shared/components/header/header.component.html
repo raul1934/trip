@@ -1,0 +1,80 @@
+<nav class="d-flex align-items-center justify-content-between w-100">
+  <img class="ml-3" alt="logo" src="/assets/logo-small.svg" [routerLink]="'/'">
+
+  <ul class="mr-3 d-flex align-items-center">
+    <li class="mr-5">
+      <div #componentRef class="search mx-3" [ngClass]="{'search--focused': focused}">
+        <div class="search-input d-flex justify-content-center align-items-center pl-2">
+          <input #input (focus)="onFocus()" [(ngModel)]="searchText" class="w-100 f-12 text-white">
+          <div *ngIf="searchText == '' && !focused" class="placeholder f-12 fw-300 text-white ml-3">
+            Search for <b>cities</b>, <b>contries</b> and <b>trips</b>
+          </div>
+          <span class="search-button">
+            <i class="ICON-SIT01_SEARCH"></i>
+          </span>
+        </div>
+        <ng-container *ngIf="focused">
+          <div class="country-search f-12 fw-300 text-white pl-3">
+            <div class="d-flex align-items-center" (click)="searchInCountry = !searchInCountry">
+              <span class="check mr-2" [class.checked]="searchInCountry"></span>
+              <span>Search for <b class="fw-700">cities</b> or <b class="fw-700">trips</b> in <b><span class="country">Brazil</span></b></span>
+            </div>
+            <hr class="mt-2">
+          </div>
+          <div class="auto-complete w-100">
+            <div class="m-3">
+              <div class="f-15 fw-400 text-white">City</div>
+              <div class="item">
+                <div class="mt-3">
+                  <a class="f-12 fw-700 text-white text-decoration-none ml-3" [routerLink]="['/trips']">Barcelona, Spain</a>
+                </div>
+                <hr class="mx-2 mt-3">
+              </div>
+            </div>
+            <div class="m-3 ">
+              <div class="f-15 fw-400 text-white">Trips (3)</div>
+              <div class="item" *ngFor="let _ of [].constructor(10)">
+                <div class="mt-3">
+                  <a class="f-12 fw-700 text-white text-decoration-none ml-3">Mochilando na Espanha</a>
+                </div>
+                <div class="row d-flex mt-1 gap-3 ml-3">
+                  <div class="d-flex justify-content-center align-items-center gap-1">
+                    <i class="ICON-SIT04_LIKE icon"></i>
+                    <span class="f-12 fw-400 text-white">(250)</span>
+                  </div>
+                  <div class="d-flex justify-content-center align-items-center gap-1">
+                    <i class="ICON-PIN1_Normal icon"></i>
+                    <span class="f-12 fw-400 text-white">250 Places</span>
+                  </div>
+                </div>
+                <p class="m-1 mx-3 f-10 fw-400">Nulla nulla ex, dictum sed sem vitae, consectetur volutpat ante. Etiam tincidunt
+                  augue
+                  sollicitudin.</p>
+                <hr class="mx-2 mt-3">
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </li>
+    <li class="ml-5">
+      <div class="f-14 fw-700 lh-13 text-center text-white">143</div>
+      <div class="f-14 fw-300 lh-13 text-center text-white mt-1">My Trips</div>
+    </li>
+    <li class="ml-5">
+      <div class="f-14 fw-700 lh-13 text-center text-white">324</div>
+      <div class="f-14 fw-300 lh-13 text-center text-white mt-1">Followers</div>
+    </li>
+    <li class="ml-5">
+      <div class="f-14 fw-700 lh-13 text-center text-white">213</div>
+      <div class="f-14 fw-300 lh-13 text-center text-white mt-1">Following</div>
+    </li>
+    <li class="ml-5">
+      <i class="ICON-SIT08_BELL"></i>
+    </li>
+    <li class="ml-5 mr-4">
+      <img
+        src="https://xyzshayari.com/wp-content/uploads/2022/08/Hiding-Face-From-Hand-Beautiful-Women-Pics-600x600.jpg">
+    </li>
+  </ul>
+</nav>

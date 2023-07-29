@@ -1,0 +1,140 @@
+app-header-bar {
+  position: fixed;
+  top: 0;
+}
+
+.main {
+  margin-top: 43px;
+  max-width: 100vw;
+  position: relative;
+
+  .search-page {
+    color: #22262A;
+    margin-top: 10rem;
+
+    &__back {
+      background-color: #0C131E;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 15px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: #FFFFFF;
+      border: none;
+      border-radius: 14px;
+      cursor: pointer;
+      position: absolute;
+      top: -2rem;
+      text-decoration: none;
+      &:hover{
+        filter: brightness(1.1);
+      }
+    }
+
+    &__locations {
+      h2 {
+        font-size: 50px;
+        font-weight: 300;
+        line-height: 40px;
+        letter-spacing: 0em;
+        text-align: left;
+      }
+
+      h3 {
+        font-size: 30px;
+        font-weight: 300;
+        line-height: 40px;
+        letter-spacing: 0em;
+        text-align: left;
+      }
+    }
+
+    &__description {
+      font-size: 25px;
+      font-weight: 300;
+      line-height: 26px;
+      letter-spacing: 0em;
+      text-align: left;
+      max-width: 450px;
+    }
+
+    &__footer {
+      color: #22262A;
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 18px;
+      letter-spacing: 0em;
+      text-align: left;
+
+      b {
+        font-size: 15px;
+        font-weight: 700;
+        line-height: 18px;
+        letter-spacing: 0em;
+        text-align: left;
+      }
+    }
+
+    &__start-trip {
+      background-color: #20CE7D;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 15px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: #22262A;
+      border: none;
+      border-radius: 7px;
+      cursor: pointer;
+
+      &:hover{
+        filter: brightness(1.1);
+      }
+
+      b {
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 20px;
+        letter-spacing: 0em;
+        text-align: left;
+      }
+    }
+
+    &__cities {
+      p {
+        font-size: 15px;
+        font-weight: 300;
+        line-height: 18px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #22262A;
+      }
+
+      &__item {
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 18px;
+        letter-spacing: 0em;
+        text-align: left;
+        border-radius: 15px;
+        color: #22262A;
+        border: none;
+        cursor: pointer;
+        white-space: nowrap;
+        &:hover{
+          filter: brightness(1.1);
+        }
+      }
+    }
+  }
+}
+
+.trip-card {
+  cursor: pointer;
+  width: 200px;
+}
+
+
+.gallery {
+  background-color: #0b131e;
+}

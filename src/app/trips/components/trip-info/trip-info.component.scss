@@ -1,0 +1,129 @@
+.trip-info {
+  background-color: #0B131EDE;
+  height: 100%;
+  width: 360px;
+  max-width: 360px;
+  border-radius: 1rem;
+
+  &__content {
+    &__header {
+      &__info {
+        color: #fff;
+
+        img {
+          width: 48px;
+          height: 48px;
+          border-radius: 50%;
+          border: 3px solid #fff;
+        }
+
+        h5 {
+          font-size: 12px;
+          font-weight: 700;
+          line-height: 16px;
+          letter-spacing: 0em;
+          text-align: left;
+        }
+
+        &__metrics {
+          color: #fff;
+
+          &__count {
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 13px;
+            letter-spacing: 0em;
+            text-align: center;
+          }
+
+          &__label {
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 13px;
+            letter-spacing: 0em;
+            text-align: center;
+          }
+        }
+
+        button {
+          height: 26px;
+          border-radius: 5px;
+          border: none;
+          cursor: pointer;
+          background-color: #FFFFFF;
+          font-size: 10px;
+          font-weight: 700;
+          line-height: 12px;
+          letter-spacing: 0em;
+          text-align: center;
+          color: #0D1724;
+        }
+      }
+
+      &__icon {
+        i {
+          color: #fff;
+          cursor: pointer;
+        }
+      }
+    }
+
+    &__info {
+      color: #fff;
+      padding-left: 48px;
+
+      h6 {
+        font-size: 15px;
+        font-weight: 700;
+        line-height: 18px;
+        letter-spacing: 0em;
+        text-align: left;
+      }
+
+      p {
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 14px;
+        letter-spacing: 0em;
+        text-align: left;
+      }
+
+      &__tags {
+        font-size: 10px;
+        font-weight: 700;
+        line-height: 12px;
+        letter-spacing: 0em;
+        text-align: left;
+
+      }
+    }
+
+    &__share {
+      padding-left: 48px;
+
+      h6,
+      a {
+        color: #fff;
+        font-size: 10px;
+        font-weight: 500;
+        line-height: 12px;
+        letter-spacing: 0em;
+        text-align: left;
+      }
+
+      &__facebook {
+        i {
+          font-size: 22px;
+          color: #4B9EFF;
+        }
+      }
+
+      &__instagram {
+        i {
+          font-size: 22px;
+          color: #FD5C63;
+        }
+      }
+    }
+  }
+}

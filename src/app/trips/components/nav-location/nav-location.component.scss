@@ -1,0 +1,42 @@
+.nav-location {
+  background-color: #03091B;
+
+  drag-scroll{
+    max-height: 44px;
+  }
+
+  .location {
+    cursor: pointer;
+    color: #fff;
+
+    &__title {
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 14px;
+      letter-spacing: 0em;
+      text-align: left;
+    }
+
+    &__subtitle {
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 14px;
+      letter-spacing: 0em;
+      text-align: left;
+    }
+
+    &--selected{
+      color: #75FFBF !important;
+    }
+  }
+
+}
+
+::ng-deep .drag-scroll-content::-webkit-scrollbar {
+  display: none !important;
+}
+
+::ng-deep .drag-scroll-content {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
