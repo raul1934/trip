@@ -1,0 +1,206 @@
+<div class="backdrop">
+  <div [@fadeInOut]  *ngIf="!loading" class="modal-wrapper">
+    <i (click)="close()" class="ICON-ROT6_CLOSE color-FFFFFF f-24"
+      style="position: absolute; right: -32px; top: -32px; cursor: pointer;"></i>
+    <div class="modal h-100">
+      <img *ngIf="!isAITrip || isAITrip == null" style="position: absolute; z-index: -1; object-fit: cover;" class="w-100 h-100 p-absolute"
+        src="/assets/images/trips/create-steps/sky-night.png">
+      <img *ngIf="isAITrip" style="position: absolute; z-index: -1; object-fit: cover;" class="w-100 h-100 p-absolute"
+        src="/assets/images/trips/create-steps/day.png">
+      <div class="d-flex flex-column w-100 h-100" *ngIf="tripCreateStep == TRIPS_CREATE_STEPS.USE_AI_STEP">
+        <div [@fadeInOut] style="flex: 1 0 0; position: relative;">
+          <div class="d-flex flex-column align-items-center justify-content-center h-100">
+            <div class="d-flex gap-5 align-items-center">
+              <button class="start-a-trip f-15 py-3 px-3"
+                (click)="isAITrip = false; tripCreateStep = TRIPS_CREATE_STEPS.ORIGIN_STEP;">
+                I want to create my trip
+              </button>
+              <button class="suggestion-ai f-15 py-3 px-3"
+                (click)="isAITrip = true; tripCreateStep = TRIPS_CREATE_STEPS.ORIGIN_STEP;">
+                Let AI suggest my trip
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="w-100 p-2 bottom-navigation">
+          <div [@fadeInOut]>
+            <h6 class="f-20 fw-700 lh-25 color-FFFFFF">You can create your trip or AI can suggest a trip for you.</h6>
+            <p class="f-15 fw-400 lh-18 color-FFFFFF">You can create your own trip and, if you want, you can use AI to
+              help
+              you suggesting activities during a specific day.<br>
+              In other hand, you can just click and let AI suggest the whole trip for you. In this case, you can edit e
+              personalize the suggestions after.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex flex-column w-100 h-100 step" *ngIf="tripCreateStep == TRIPS_CREATE_STEPS.ORIGIN_STEP">
+        <div [@fadeInOut] class="d-flex align-items-center h-100">
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-8 mt-3">
+                <p class="f-12 lh-14 fw-500 ml-3 pb-2 color-FFFFFF">The city where you live</p>
+                <app-search class="w-100"></app-search>
+              </div>
+              <div class="col-12 col-md-4 mt-3">
+                <p class="f-12 lh-14 fw-500 ml-3 pb-2 color-FFFFFF">The date when you plan to travel</p>
+                <app-date class="w-100"></app-date>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="w-100 p-2 bottom-navigation">
+          <div [@fadeInOut] class="d-flex justify-content-between gap-3">
+            <div>
+              <h6 class="f-20 fw-700 lh-25 color-FFFFFF">Start a new trip!</h6>
+              <p class="f-15 fw-400 lh-18 color-FFFFFF">Choose the city you come from and a date.</p>
+            </div>
+            <div class="d-flex gap-2">
+              <button class="next f-12 py-1 py-0 px-2" (click)="tripCreateStep = TRIPS_CREATE_STEPS.DESTINATION_STEP;">
+                Next
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex flex-column w-100 h-100 step" *ngIf="tripCreateStep == TRIPS_CREATE_STEPS.DESTINATION_STEP">
+        <div [@fadeInOut] style="flex: 1 0 0; position: relative;">
+          <div class="d-flex flex-column align-items-center justify-content-center h-100">
+            <div class="w-100" style="max-width:738px;">
+              <p class="f-12 lh-14 fw-500 ml-3 pb-2 color-FFFFFF">Choose another city to substitute your actual choice</p>
+              <app-search class="w-100"></app-search>
+            </div>
+              <div class="d-flex mt-5 px-4">
+                  <div class="d-flex flex-column justify-content-between mx-4 mt-4">
+                    <div class="d-flex align-items-end w-100" style="flex: 1 0 0;">
+                      <p class="f-15 lh-18 fw-700 color-FFD600">City</p>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center w-100 mt-4" style="height: 32px;">
+                      <p class="f-15 lh-18 fw-700 color-FFFFFF">Days</p>
+                    </div>
+                  </div>
+                  <div class="w-100 mx-4 mt-4">
+                    <div class="d-flex flex-column align-items-center justify-content-center location">
+                      <i class="ICON-PIN1_Normal mb-2 color-79FF87"></i>
+                      <h5 class="f-20 lh-13 fw-700 mb-1 color-79FF87 text-no-wrap">São Paulo</h5>
+                      <h6 class="f-16 lh-13 fw-500 color-79FF87 text-no-wrap">Brazil</h6>
+                    </div>
+                    <div class="w-100 mt-4 d-flex align-items-center justify-content-center" style="height: 32px;">
+                        <h6 class="f-16 lh-13 fw-500 color-79FF87 text-no-wrap">Start</h6>
+                    </div>
+                  </div>
+                  <ng-container *ngFor="let _ of [].constructor(3)">
+                    <div class="w-100 position-relative">
+                      <div style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%);">
+                        <span class="counter d-flex justify-content-center align-items-center fw-700 p-1">X</span>
+                      </div>
+                      <div class="d-flex flex-column align-items-center justify-content-center location mx-4 mt-4">
+                        <i class="ICON-PIN1_Normal mb-2 color-FFD600"></i>
+                        <h5 class="f-20 lh-13 fw-700 mb-1 color-FFD600 text-no-wrap">São Paulo</h5>
+                        <h6 class="f-16 lh-13 fw-500 color-FFD600 text-no-wrap">France</h6>
+                      </div>
+                      <div class="w-100 mt-4" style="height: 32px;">
+                        <div class="d-flex align-items-center justify-content-center w-100 gap-1">
+                          <span class="counter d-flex justify-content-center align-items-center fw-700 p-1">-</span>
+                          <span class="f-20 lh-24 fw-700 color-FFFFFF">03</span>
+                          <span class="counter d-flex justify-content-center align-items-center fw-700 p-1">+</span>
+                        </div>
+                      </div>
+                    </div>
+                  </ng-container>
+              </div>
+          </div>
+        </div>
+        <div class="w-100 p-2 bottom-navigation">
+          <div [@fadeInOut] class="d-flex justify-content-between gap-3">
+            <div>
+              <h6 class="f-20 fw-700 lh-25 color-FFFFFF">Select one or more cities and how many days you can stay in each one.</h6>
+              <p class="f-15 fw-400 lh-18 color-FFFFFF">Search and select a city, choose how many days and that’s it! <br>Don’t worry, you can change everything later.</p>
+            </div>
+            <div class="d-flex gap-2">
+              <button class="back f-12 py-1 py-0 px-2" (click)="tripCreateStep = TRIPS_CREATE_STEPS.ORIGIN_STEP;">
+                Back
+              </button>
+              <button class="next f-12 py-1 py-0 px-2" (click)="tripCreateStep = TRIPS_CREATE_STEPS.TRAVEL_TYPE_STEP">
+                Next
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex flex-column w-100 h-100 step" *ngIf="tripCreateStep == TRIPS_CREATE_STEPS.TRAVEL_TYPE_STEP">
+        <div [@fadeInOut] class="d-flex align-items-center justify-content-center gap-4 px-4 h-100 travel-type">
+          <div class="p-3 travel-type__item travel-type__item--active">
+            <h6 class="f-15 lh-18 fw-500 color-F4AE47">Adventure & cultural travel</h6>
+            <p class="f-15 lh-18 fw-500 color-FFFFFF mt-4">If you like things like museums, cultural events, hike, scuba dive (and others sports) and go on tours. We will try show more of this places for you.</p>
+          </div>
+          <div class="p-3 travel-type__item">
+            <h6 class="f-15 lh-18 fw-500 color-F4AE47">Relaxation travel</h6>
+            <p class="f-15 lh-18 fw-500 color-FFFFFF mt-4">If you like more about self-care in the form of resting and wants to go to the beach, lounge around, and hang out at the spas and calm places.</p>
+          </div>
+          <div class="p-3 travel-type__item travel-type__item--active">
+            <h6 class="f-15 lh-18 fw-500 color-F4AE47">Partie travel</h6>
+            <p class="f-15 lh-18 fw-500 color-FFFFFF mt-4">Partiers are all about festivals, bar hopping, enjoying brunches and day parties, and carrying that energy on the night scene.</p>
+          </div>
+          <div class="p-3 travel-type__item">
+            <h6 class="f-15 lh-18 fw-500 color-F4AE47">Combo travel</h6>
+            <p class="f-15 lh-18 fw-500 color-FFFFFF mt-4">If you want a little of everything, and what you would like to do depends on the mood and day.</p>
+          </div>
+        </div>
+        <div class="w-100 p-2 bottom-navigation">
+          <div [@fadeInOut] class="d-flex justify-content-between gap-3">
+            <div>
+              <h6 class="f-20 fw-700 lh-25 color-FFFFFF">A little bit about your travel type.</h6>
+              <p class="f-15 fw-400 lh-18 color-FFFFFF">Select one or more options about your type of travel.</p>
+            </div>
+            <div class="d-flex gap-2">
+              <button class="back f-12 py-1 py-0 px-2" (click)="tripCreateStep = TRIPS_CREATE_STEPS.DESTINATION_STEP;">
+                Back
+              </button>
+              <button class="next f-12 py-1 py-0 px-2" (click)="tripCreateStep = TRIPS_CREATE_STEPS.INTERESTS_STEP;">
+                Next
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex flex-column w-100 h-100 step" *ngIf="tripCreateStep == TRIPS_CREATE_STEPS.INTERESTS_STEP">
+        <div class="d-flex flex-column justify-content-center h-100 px-5">
+          <h6 class="f-20 lh-24 fw-700 color-FFFFFF">To acurate a little bit more your travel taste.</h6>
+          <p class="f-15 lh-18 fw-700 color-FFFFFF">Select one or more ideas that inspire you.</p>
+          <div [@fadeInOut] class="d-flex flex-wrap align-items-center gap-3 mt-5 interests">
+            <ng-container *ngFor="let _ of [].constructor(20); let odd = odd">
+              <div class="interests__item px-4 py-2 f-15 lh-18 fw-500" [ngClass]="{'interests__item--active':odd}">More mainstream places</div>
+            </ng-container>
+          </div>
+        </div>
+
+        <div class="w-100 p-2 bottom-navigation">
+          <div [@fadeInOut] class="d-flex justify-content-between gap-3">
+            <div>
+              <h6 class="f-20 fw-700 lh-25 color-FFFFFF">A little bit about your travel type.</h6>
+              <p class="f-15 fw-400 lh-18 color-FFFFFF">Select one or more options about your type of travel.</p>
+            </div>
+            <div class="d-flex gap-2">
+              <button class="back f-12 py-1 py-0 px-2" (click)="tripCreateStep = TRIPS_CREATE_STEPS.TRAVEL_TYPE_STEP;">
+                Back
+              </button>
+              <button *ngIf="!isAITrip" class="next start-a-trip f-12 py-1 py-0 px-2" (click)="createTrip()">
+                go
+              </button>
+              <button *ngIf="isAITrip" class="next start-a-trip f-12 py-1 py-0 px-2" (click)="createTrip()">
+                Suggest My Trip
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="loading" class="d-flex justify-content-center align-items-center h-100 w-100" style="position: absolute;">
+    <p class="color-FFFFFF">LOADING</p>
+  </div>
+</div>

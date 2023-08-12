@@ -1,0 +1,31 @@
+:host {
+  width: 100% !important;
+  flex: 1;
+  display: flex;
+}
+
+.scroll-gallery{
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+  overflow-x: scroll;
+
+  &::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  &--scrolling{
+    pointer-events: none !important;
+    cursor: move;
+  }
+
+  [appScrollGalleryItem] {
+    display: flex;
+    min-height: max-content;
+    position: relative;
+  }
+}
+
+

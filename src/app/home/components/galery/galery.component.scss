@@ -51,23 +51,23 @@
 
 
 .trip-card {
-  width: 20.1%;
+  min-width: 20%;
   text-decoration: none;
 
   @media (max-width: 1196px) {
-    width: 25.1%;
+    min-width: 25%;
   }
 
   @media (max-width: 996px) {
-    width: 33.4%;
+    min-width: 33.4%;
   }
 
   @media (max-width: 768px) {
-    width: 50%;
+    min-width: 50%;
   }
 
   @media (max-width: 465px) {
-    width: 60%;
+    min-width: 75%;
   }
 }
 

@@ -19,9 +19,18 @@ import { LocationInfoComponent } from './components/location-info/location-info.
 import { AirBnbInfoComponent } from './components/air-bnb-info/air-bnb-info.component';
 import { GaleryComponent } from './components/galery/galery.component';
 import { MapModule } from '../shared/components/map/map.module';
+
+import { ScrollGalleryModule } from '../shared/components/scroll-gallery/scroll-gallery.module';
+import { TripsViewComponent } from './show/trips-view.component';
+import { TripsCreateComponent } from './create/trips-store.component';
+import { TripsCreateStepsComponent } from './trips-create-steps/trips-create-steps.component';
+import { SearchComponent } from './trips-create-steps/components/search/search.component';
+import { DateComponent } from './trips-create-steps/components/date/date.component';
+
 @NgModule({
   declarations: [
     TripsComponent,
+    TripsCreateComponent,
     LocationComponent,
     FlightComponent,
     AirBnbComponent,
@@ -31,6 +40,10 @@ import { MapModule } from '../shared/components/map/map.module';
     LocationInfoComponent,
     AirBnbInfoComponent,
     GaleryComponent,
+    TripsViewComponent,
+    TripsCreateStepsComponent,
+    SearchComponent,
+    DateComponent
   ],
   imports: [
     CommonModule,
@@ -42,7 +55,8 @@ import { MapModule } from '../shared/components/map/map.module';
     DragScrollModule,
     ObserveVisibilityModule,
     NgxQRCodeModule,
-    MapModule
+    MapModule,
+    ScrollGalleryModule
   ]
 })
 export class TripsModule { }

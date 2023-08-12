@@ -1,6 +1,7 @@
 import { animate, style, transition, trigger } from '@angular/animations';
 import { AfterViewInit, Component, HostListener, ViewChild } from '@angular/core';
 import { DragScrollComponent } from 'ngx-drag-scroll';
+import { TripsCreateStepsService } from 'src/app/trips/trips-create-steps/trips-create-steps.service';
 
 @Component({
   selector: 'app-header',
@@ -32,6 +33,10 @@ export class HeaderComponent implements AfterViewInit {
   protected smallBar = false;
   protected hamburguerOpen = false;
 
+  constructor(private tripsCreateStepsService: TripsCreateStepsService){
+
+  }
+
   @HostListener('window:scroll') onScroll(): void {
    this.checkSmallBarVisible();
   }
@@ -60,6 +65,10 @@ export class HeaderComponent implements AfterViewInit {
     }else{
       document.body.classList.remove('modal-open');
     }
+  }
+
+  protected startTrip(){
+    this.tripsCreateStepsService.show();
   }
 
 }

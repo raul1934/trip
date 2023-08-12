@@ -15,17 +15,17 @@
   }
 }
 
-.trip-card{
-  width: 25.1%;
+.story-card{
+  min-width: 25.1%;
 
   @media (max-width: 1196px) {
-    width: 33.33%;
+    min-width: 33.33%;
   }
   @media (max-width: 996px) {
-    width: 50%;
+    min-width: 50%;
   }
   @media (max-width: 646px) {
-    width: 60%;
+    min-width: 60%;
   }
 }
 
@@ -36,15 +36,6 @@
   }
 }
 
-::ng-deep .drag-scroll-wrapper {
-  height: fit-content;
-}
-
-::ng-deep .drag-scroll-content::-webkit-scrollbar {
-  display: none !important;
-}
-
-::ng-deep .drag-scroll-content {
-  -ms-overflow-style: none !important;
-  scrollbar-width: none !important;
+.stories-viewer{
+  position: fixed;
 }

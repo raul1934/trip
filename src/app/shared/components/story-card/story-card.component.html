@@ -3,11 +3,14 @@
     <i class="ICON-CON4_STORY"></i>
   </div>
   <div class="image">
-    <img loading="lazy" class="w100 h-100" src="https://cdn.pixabay.com/photo/2015/01/07/15/51/woman-591576_1280.jpg" />
+    <img loading="lazy" class="w100 h-100" (loaded)="isLoadingImage = false" [src]="'https://random.imagecdn.app/800/800?t='+timestamp" />
+    <ng-container *ngIf="isLoadingImage">
+      <div *skeleton="true"></div>
+    </ng-container>
     <div class="backdrop w-100 h-100"></div>
     <div class="content pt-4 px-3">
-      <h6 class="f-15 fw-700 text-white">My first trip...</h6>
-      <p class="f-14 fw-400 text-white mt-2">C’mon!!! Follow our steps here to create your first itinerary with TheTripCompany.</p>
+      <h6 class="f-15 fw-700 color-FFFFFF">My first trip...</h6>
+      <p class="f-14 fw-400 color-FFFFFF mt-2">C’mon!!! Follow our steps here to create your first itinerary with TheTripCompany.</p>
     </div>
   </div>
 </div>

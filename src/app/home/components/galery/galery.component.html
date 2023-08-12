@@ -1,23 +1,32 @@
-<drag-scroll class="places" >
-  <div drag-scroll-item class="item" (click)="activeIndex = 0" [ngClass]="{'item--active': activeIndex == 0 }"><b>Brasil</b> (213)</div>
-  <div drag-scroll-item class="item" (click)="activeIndex = 1" [ngClass]="{'item--active': activeIndex == 1 }"><b>Chile</b> (205)</div>
-  <div drag-scroll-item class="item" (click)="activeIndex = 2" [ngClass]="{'item--active': activeIndex == 2 }"><b>Spain</b> (178)</div>
-  <div drag-scroll-item class="item" (click)="activeIndex = 3" [ngClass]="{'item--active': activeIndex == 3 }"><b>France</b> (154)</div>
-  <div drag-scroll-item class="item" (click)="activeIndex = 4" [ngClass]="{'item--active': activeIndex == 4 }"><b>Italy</b> (123)</div>
-  <div drag-scroll-item class="item" (click)="activeIndex = 5" [ngClass]="{'item--active': activeIndex == 5 }"><b>Egypt</b> (92)</div>
-  <div drag-scroll-item class="item" (click)="activeIndex = 6" [ngClass]="{'item--active': activeIndex == 6 }"><b>United States</b> (87)</div>
-  <div drag-scroll-item class="item" (click)="activeIndex = 7" [ngClass]="{'item--active': activeIndex == 7 }"><b>Argentina</b> (73)</div>
-  <div drag-scroll-item class="item" (click)="activeIndex = 8" [ngClass]="{'item--active': activeIndex == 8 }"><b>Peru</b> (56)</div>
-</drag-scroll>
+<app-scroll-gallery class="places" >
+  <div appScrollGalleryItem class="item" (click)="activeIndex = 0" [ngClass]="{'item--active': activeIndex == 0 }"><b>Brasil</b> (213)</div>
+  <div appScrollGalleryItem class="item" (click)="activeIndex = 1" [ngClass]="{'item--active': activeIndex == 1 }"><b>Chile</b> (205)</div>
+  <div appScrollGalleryItem class="item" (click)="activeIndex = 2" [ngClass]="{'item--active': activeIndex == 2 }"><b>Spain</b> (178)</div>
+  <div appScrollGalleryItem class="item" (click)="activeIndex = 3" [ngClass]="{'item--active': activeIndex == 3 }"><b>France</b> (154)</div>
+  <div appScrollGalleryItem class="item" (click)="activeIndex = 4" [ngClass]="{'item--active': activeIndex == 4 }"><b>Italy</b> (123)</div>
+  <div appScrollGalleryItem class="item" (click)="activeIndex = 5" [ngClass]="{'item--active': activeIndex == 5 }"><b>Egypt</b> (92)</div>
+  <div appScrollGalleryItem class="item" (click)="activeIndex = 6" [ngClass]="{'item--active': activeIndex == 6 }"><b>United States</b> (87)</div>
+  <div appScrollGalleryItem class="item" (click)="activeIndex = 7" [ngClass]="{'item--active': activeIndex == 7 }"><b>Argentina</b> (73)</div>
+  <div appScrollGalleryItem class="item" (click)="activeIndex = 8" [ngClass]="{'item--active': activeIndex == 8 }"><b>Peru</b> (56)</div>
+</app-scroll-gallery>
+
 <div class="d-flex justify-content-center align-items-center mt-4">
   <div class="carrousel-input mr-3" (click)="moveLeft()">
     <i class="ICON-SIT06_LEFT"></i>
   </div>
-  <drag-scroll #carrousel class="trips">
-    <a [routerLink]="['trip',123]" *ngFor="let _ of trips" drag-scroll-item class="trip-card">
+  <app-scroll-gallery (rightIndexChanged)='rightIndexChange($event)' class="trips" #carrousel>
+    <a [routerLink]="['trip/view',123]" *ngFor="let _ of trips" appScrollGalleryItem class="trip-card">
       <app-trip-card class="d-flex justify-content-center px-2"></app-trip-card>
     </a>
-  </drag-scroll>
+
+    <ng-container *ngFor="let _ of [].constructor(6)">
+      <a [routerLink]="['trip/view',123]" *ngIf="loading" appScrollGalleryItem class="trip-card">
+        <app-trip-card  [isLoading]="loading" class="d-flex justify-content-center px-2"></app-trip-card>
+      </a>
+    </ng-container>
+
+
+  </app-scroll-gallery>
   <div class="carrousel-input ml-3" (click)="moveRight()">
     <i class="ICON-SIT05_RIGHT"></i>
   </div>

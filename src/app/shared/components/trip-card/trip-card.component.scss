@@ -9,6 +9,19 @@
     overflow: hidden;
     border: 1px solid #000;
 
+    img{
+      position: absolute;
+      top: 0;
+    }
+
+    [skeleton]{
+      position: absolute;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+    }
+
+
     .info {
       position: absolute;
       backdrop-filter: blur(4px);
@@ -33,6 +46,13 @@
         transform: translate(-50%, -75%);
         overflow: hidden;
         border: 2px solid #fff;
+
+        [skeleton]{
+          position: absolute;
+          z-index: -1;
+          width: 100%;
+          height: 100%;
+        }
       }
     }
   }

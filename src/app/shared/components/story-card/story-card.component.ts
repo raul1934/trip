@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class StoryCardComponent {
 
+  protected isLoadingImage = true;
+
+  protected timestamp:any;
+
+  constructor() {
+    this.timestamp = new Date().getTime() + (Math.random() + 1).toString(36).substring(7);
+  }
+
 }

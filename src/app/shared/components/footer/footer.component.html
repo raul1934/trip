@@ -8,9 +8,11 @@
   </ul>
   <ul class="d-none d-lg-flex  gap-3 align-items-center">
     <li class="f-12 fw-700 text-uppercase">
-      <button class="start-a-trip">
-        START A TRIP
-      </button>
+      <a [routerLink]="['trip/create']">
+        <button class="start-a-trip">
+          START A TRIP
+        </button>
+      </a>
     </li>
     <li class="f-12 fw-700 text-uppercase">SING UP</li>
     <li class="f-12 fw-700 text-uppercase">LOGIN</li>

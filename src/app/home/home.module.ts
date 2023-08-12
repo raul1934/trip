@@ -11,7 +11,7 @@ import { StoriesComponent } from './components/stories/stories.component';
 import { StoryCardModule } from '../shared/components/story-card/story-card.module';
 import { FooterModule } from '../shared/components/footer/footer.module';
 import { HeaderComponent } from './components/header/header.component';
-import { ScrollGalleryModule } from '../shared/directives/scroll-gallery/scroll-gallery.module';
+import { ScrollGalleryModule } from '../shared/components/scroll-gallery/scroll-gallery.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,7 @@ import { ScrollGalleryModule } from '../shared/directives/scroll-gallery/scroll-
     SearchComponent,
     GaleryComponent,
     StoriesComponent,
-    HeaderComponent
+    HeaderComponent,
   ],
   imports: [
     CommonModule,

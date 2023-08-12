@@ -3,14 +3,17 @@ import { CommonModule } from '@angular/common';
 
 import { TripCardComponent } from './trip-card.component';
 import { SkelletonLoaderModule } from '../../directives/skeleton-loader/skeleton-loader.module';
+import { ImageLoadedModule } from '../../directives/image-loaded/observe-visibility.module';
+
 
 @NgModule({
   declarations: [
-    TripCardComponent
+    TripCardComponent,
   ],
   imports: [
     CommonModule,
-    SkelletonLoaderModule
+    SkelletonLoaderModule,
+    ImageLoadedModule
   ],
   exports:[
     TripCardComponent

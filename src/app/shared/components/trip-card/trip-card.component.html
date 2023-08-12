@@ -1,34 +1,36 @@
 <div *ngIf="!isLoading" class="trip w-100" [ngClass]="{'trip--light-mode':lightMode}">
   <div class="image" [ngStyle]="{'aspect-ratio': aspectRatio}">
-    <img loading="lazy"  class="w100 h-100" src="https://cdn.pixabay.com/photo/2015/01/07/15/51/woman-591576_1280.jpg" />
+    <div *skeleton="isLoadingBackgroundImage"></div>
+    <img loading="lazy" class="w100 h-100" (loaded)="isLoadingBackgroundImage = false" [src]="'https://random.imagecdn.app/800/800?t='+timestamp" />
     <div class="info">
       <div class="profile">
-        <img loading="lazy" class="w100 h-100" src="https://cdn.pixabay.com/photo/2015/01/07/15/51/woman-591576_1280.jpg" />
+        <div *skeleton="isLoadingProfileImage"></div>
+        <img loading="lazy" class="w100 h-100" (loaded)="isLoadingProfileImage = false" [src]="'https://random.imagecdn.app/64/64?t='+timestamp" />
       </div>
-      <div class="name f-12 fw-700 text-white text-center">Elena Marinho</div>
+      <div class="name f-12 fw-700 color-FFFFFF text-center">Elena Marinho</div>
       <div class="d-flex align-items-center gap-1">
-        <i class="ICON-SIT03_ITINERARY f-12 text-white"></i>
-        <span class="f-12 fw-500 text-white ml-1">213 trips</span>
+        <i class="ICON-SIT03_ITINERARY f-12 color-FFFFFF"></i>
+        <span class="f-12 fw-500 color-FFFFFF ml-1">213 trips</span>
       </div>
       <div class="d-flex align-items-center gap-1">
-        <i class="ICON-SIT02_STEAL f-12 text-white"></i>
-        <span class="f-12 fw-500 text-white ml-1">178 stolen</span>
+        <i class="ICON-SIT02_STEAL f-12 color-FFFFFF"></i>
+        <span class="f-12 fw-500 color-FFFFFF ml-1">178 stolen</span>
       </div>
     </div>
   </div>
   <div class="d-flex justify-content-center m-3 gap-3">
     <div class="d-flex justify-content-center align-items-center gap-1">
       <i class="ICON-SIT04_LIKE icon"></i>
-      <span class="f-10 fw-500 text-white" [ngClass]="{'text-111B29':lightMode }">(250)</span>
+      <span class="f-10 fw-500 color-FFFFFF" [ngClass]="{'text-111B29':lightMode }">(250)</span>
     </div>
     <div class="d-flex justify-content-center align-items-center gap-1">
       <i class="ICON-PIN1_Normal icon"></i>
-      <span class="f-10 fw-500 text-white" [ngClass]="{'text-111B29':lightMode }">250 Places</span>
+      <span class="f-10 fw-500 color-FFFFFF" [ngClass]="{'text-111B29':lightMode }">250 Places</span>
     </div>
   </div>
-  <h5 class="f-14 fw-700 text-white mt-1" [ngClass]="{'text-111B29':lightMode }">Viva Paraty!</h5>
+  <h5 class="f-14 fw-700 color-FFFFFF mt-1" [ngClass]="{'text-111B29':lightMode }">Viva Paraty!</h5>
   <p class="f-10 fw-400 m-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam viverra est et efficitur faucibus.</p>
-  <h6 class="f-12 f-500 text-white mt-2" [ngClass]="{'text-111B29':lightMode }">Paraty, Brazil</h6>
+  <h6 class="f-12 f-500 color-FFFFFF mt-2" [ngClass]="{'text-111B29':lightMode }">Paraty, Brazil</h6>
 </div>
 
 <div *ngIf="isLoading"  class="trip w-100 trip--loading">

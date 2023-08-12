@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { DragScrollComponent } from 'ngx-drag-scroll';
+import { ScrollGalleryComponent } from 'src/app/shared/components/scroll-gallery/scroll-gallery.component';
 
 @Component({
   selector: 'app-stories',
@@ -8,7 +8,9 @@ import { DragScrollComponent } from 'ngx-drag-scroll';
 })
 export class StoriesComponent {
 
-  @ViewChild('carrousel', { read: DragScrollComponent }) carrousel?: DragScrollComponent;
+  @ViewChild('carrousel', { read: ScrollGalleryComponent }) carrousel?: ScrollGalleryComponent;
+  @ViewChild('StoriesVierwerCaroussel', { read: ScrollGalleryComponent }) storiesVierwerCaroussel?: ScrollGalleryComponent;
+  protected storiesViewerShow = false;
 
   moveLeft() {
     this.carrousel?.moveLeft();
@@ -18,4 +20,20 @@ export class StoriesComponent {
     this.carrousel?.moveRight();
   }
 
+  rightIndexChange(index: number){
+
+  }
+
+  onStoryClick(index: number){
+    this.storiesViewerShow = true;
+    this.storiesVierwerCaroussel?.moveTo(index);
+  }
+
+  storiesViewerMoveLeft() {
+    this.storiesVierwerCaroussel?.moveLeft();
+  }
+
+  storiesViewermoveRight() {
+    this.storiesVierwerCaroussel?.moveRight();
+  }
 }

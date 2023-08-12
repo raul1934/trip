@@ -10,13 +10,13 @@
       <app-galery></app-galery>
     </div>
     <div class="d-none d-lg-block">
-      <h1 class="f-25 fw-300 lh-20 text-white text-center mt-5">Create all kind of trips and experiences to share and explore the world.</h1>
-      <p class="f-16 fw-300 lh-14 text-white mt-3 mt-lg-2 text-center">Work with tourism? Welcome, <a class="start-a-trip-link">learn how to offer</a> better and personalized trips
+      <h1 class="f-25 fw-300 lh-20 color-FFFFFF text-center mt-5">Create all kind of trips and experiences to share and explore the world.</h1>
+      <p class="f-16 fw-300 lh-14 color-FFFFFF mt-3 mt-lg-2 text-center">Work with tourism? Welcome, <a [routerLink]="['trip/create']" class="start-a-trip-link">learn how to offer</a> better and personalized trips
         for your costumers.</p>
       <div class="row d-flex justify-content-center m-5 gap-3">
-        <button class="f-12 fw-700 px-3 py-2 text-center text-uppercase  start-a-trip">
+        <a [routerLink]="['trip/create']" class="py-2 start-a-trip">
           START A TRIP
-        </button>
+        </a>
       </div>
     </div>
   </div>

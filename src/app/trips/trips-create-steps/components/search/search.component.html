@@ -1,0 +1,19 @@
+<div #componentRef class="search m-auto" [ngClass]="{'search--focused': focused}">
+  <div class="search-input">
+    <input #input placeholder="Which city you come from?" (focus)="onFocus()">
+    <span class="search-button">
+      <i class="ICON-SIT01_SEARCH"></i>
+    </span>
+  </div>
+  <div class="auto-complete w-100" *ngIf="focused">
+    <hr class="mx-3">
+    <div class="m-3">
+      <div class="category">City</div>
+      <div class="item">
+        <div class="d-flex gap-1 mt-3">
+          <span class="name">Barcelona, Spain</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

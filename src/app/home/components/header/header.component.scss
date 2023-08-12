@@ -19,6 +19,11 @@
       cursor: pointer;
     }
   }
+
+  img {
+    height: 64px;
+    transition: all 600ms ease;
+  }
 }
 
 .header-fixed {
@@ -47,7 +52,7 @@
   }
 
   img {
-    height: 64px;
+    height: 48px;
     transition: all 600ms ease;
   }
 
@@ -87,7 +92,7 @@
     }
 
     &__logo {
-      height: 48px;
+      height: 64px;
     }
 
     &__user{
@@ -101,5 +106,5 @@
 }
 
 .bg-dark {
-  background-color: var(--primary-color);
+  background-color: var(--color-0B131E);
 }

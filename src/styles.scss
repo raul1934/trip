@@ -1,3 +1,4 @@
+@use './assets/scss/colors.scss';
 @use './assets/scss/icons.css';
 @use './assets/scss/normalize.css';
 @use './assets/scss/bootstrap-grid.css';
@@ -6,18 +7,13 @@
 @use './assets/scss/typograph.scss';
 @use './assets/scss/media-queries.scss';
 
-:root {
-  --primary-color: #0b131e;
-  --primary-green: #20ce7d;
-}
-
 * {
   font-family: "HelveticaNeueCyr", Helvetica, sans-serif;
   //font-family: Helvetica, Arial, sans-serif;
 }
 
 .bg-dark {
-  background-color: var(--primary-color);
+  background-color: var(--color-0B131E);
 }
 
 .modal-open{
@@ -26,18 +22,46 @@
 
 .start-a-trip {
   border-radius: 7px;
-  background-color: var(--primary-green);
+  background-color: var(--color-20CE7D) !important;
   padding: 0.5rem 1rem;
-  color: var(--primary-color);
   cursor: pointer;
   border: none;
-  color: #22262A;
+  color: #22262A !important;
   text-align: center;
   font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
+  text-decoration: none;
 
   &:hover {
     filter: brightness(1.1);
+  }
+
+  &:disabled{
+    cursor: not-allowed;
+    filter: brightness(0.6);
+  }
+}
+
+.suggestion-ai {
+  border-radius: 7px;
+  background-color: var(--color-FFD600) !important;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border: none;
+  color: #22262A !important;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  &:hover {
+    filter: brightness(1.1);
+  }
+
+  &:disabled{
+    cursor: not-allowed;
+    filter: brightness(0.6);
   }
 }

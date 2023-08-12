@@ -1,0 +1,135 @@
+.main {
+  margin-top: 43px;
+  position: relative;
+  width: 100vw;
+  height: calc(100vh - 43px);
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.modal-wrapper {
+  position: relative;
+  width: 90vw;
+  max-width: 1200px;
+  height: 600px;
+  border-radius: 1rem;
+}
+
+.modal {
+  z-index: 1;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  border: 2px solid #1E1E1E;
+  overflow: hidden;
+}
+
+.location {
+  font-size: 40px;
+}
+
+.counter{
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: white;
+  cursor: pointer;
+  user-select: none;
+}
+
+.destinations {
+  background-image: linear-gradient(to right, white 33%, rgba(255, 255, 255, 0) 0%);
+  background-position: bottom;
+  background-size: 10px 2px;
+  background-repeat: repeat-x;
+}
+
+.step{
+
+  .travel-type{
+    .travel-type__item{
+      position: relative;
+      background-color: #0B121D;
+      border-radius: 15px;
+      max-width: 185px;
+      min-height: 300px;
+      cursor: pointer;
+      transition: all 200ms;
+
+      &:hover:not(&--active){
+        outline: 1px solid #0075FF;
+      }
+
+      &--active{
+        outline: 2px solid #0075FF;
+
+        &::after{
+          content: ' ';
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          position: absolute;
+          bottom: -20px;
+          left: 50%;
+          background-color: #0075FF;
+          transform: translateX(-50%);
+        }
+      }
+    }
+  }
+
+  .interests{
+    &__item{
+      min-height: 30px;
+      border-radius: 15px;
+      background-color: #131618;
+      color: #FFFFFF;
+      cursor: pointer;
+
+      &--active{
+        background-color: #FFD600;
+        color: #131618;
+      }
+    }
+  }
+
+  .bottom-navigation{
+    background-color:#1E1E1E;
+    min-height: 100px;
+
+    button{
+      height: 30px;
+      width: 144px;
+      border-radius: 7px;
+      background-color: transparent;
+      cursor: pointer;
+
+      &:hover{
+        filter: brightness(1.1);
+      }
+
+      &.next{
+        color: #20CE7D;
+        border: 1px solid #20CE7D;
+      }
+
+      &.back{
+        color: #FFFFFF;
+        border: 1px solid #FFFFFF;
+      }
+    }
+  }
+}
+
