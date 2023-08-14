@@ -1,10 +1,11 @@
 .search {
   position: relative;
   width: 100vw;
-  max-width: 650px !important;
+  max-width: 360px !important;
   border-radius: 7px;
   background: #FFF;
   box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.37);
+  z-index: 3;
 
   &--focused {
     border-bottom-left-radius: 0px;
@@ -15,14 +16,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 80px;
+    min-height: 46px;
 
     input {
       border: none;
       height: 100%;
       width: 100%;
       padding: 1rem;
-      font-size: 29px;
+      font-size: 15px;
       background-color: transparent;
       flex: 1;
       border-top-left-radius: 0.5rem;
@@ -47,8 +48,8 @@
     }
 
     &>.search-button {
-      width: 80px;
-      height: 80px;
+      width: 46px;
+      height: 46px;
       border-top-right-radius: 0.5rem;
       border-bottom-right-radius: 0.5rem;
       display: flex;

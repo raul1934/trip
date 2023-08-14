@@ -2,6 +2,10 @@ import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, C
 import { GoogleMap, MapInfoWindow } from '@angular/google-maps';
 import { ObserveVisibilityItemDirective } from 'src/app/shared/directives/observe-visibility/observe-visibility.directive';
 
+interface trip {
+  active:boolean;
+}
+
 @Component({
   selector: 'app-trips-view',
   templateUrl: './trips-view.component.html',
@@ -24,6 +28,8 @@ export class TripsViewComponent implements AfterViewInit {
   protected tripInfoVisible = false;
   protected locationInfoVisible = false;
   protected airBnbInfoVisible = false;
+
+  protected tripDays:Array<Array<trip>> = [[{active:false},{active:false},{active:false}],[{active:false},{active:false},{active:false}],[{active:false},{active:false},{active:false}],[{active:false},{active:false},{active:false}],[{active:false},{active:false},{active:false}],[{active:false},{active:false},{active:false}]];
 
   constructor(private changeDetectorRef: ChangeDetectorRef) {}
 
@@ -284,17 +290,17 @@ export class TripsViewComponent implements AfterViewInit {
     this.setAllMarkers();
   }
 
-  openFlightInfoModal(){
-    this.tripInfoVisible = false;
-    this.locationInfoVisible = false;
-    this.airBnbInfoVisible = false;
-    setTimeout(()=>{
-      this.flightInfoVisible = true;
-      this.setMarker();
-    },300);
+  private resetSelection(){
+    this.tripDays = this.tripDays.map((tripDay:Array<trip>)=>{
+      return tripDay.map((trip)=>{
+         trip.active = false;
+         return trip;
+      })
+    })
   }
 
   openTripInfoModal(){
+    this.resetSelection();
     this.flightInfoVisible = false;
     this.locationInfoVisible = false;
     this.airBnbInfoVisible = false;
@@ -304,20 +310,36 @@ export class TripsViewComponent implements AfterViewInit {
     },300);
   }
 
-  openLocationInfoModal(){
+  openFlightInfoModal(trip:trip){
+    this.resetSelection();
+    this.tripInfoVisible = false;
+    this.locationInfoVisible = false;
+    this.airBnbInfoVisible = false;
+    trip.active = true;
+    setTimeout(()=>{
+      this.flightInfoVisible = true;
+      this.setMarker();
+    },300);
+  }
+
+  openLocationInfoModal(trip:trip){
+    this.resetSelection();
     this.flightInfoVisible = false;
     this.tripInfoVisible = false;
     this.airBnbInfoVisible = false;
+    trip.active = true;
     setTimeout(()=>{
        this.locationInfoVisible = true;
        this.setMarker();
     },300);
   }
 
-  openAirBnbInfoModal(){
+  openAirBnbInfoModal(trip:trip){
+    this.resetSelection();
     this.flightInfoVisible = false;
     this.tripInfoVisible = false;
     this.locationInfoVisible = false;
+    trip.active = true;
     setTimeout(()=>{
       this.airBnbInfoVisible = true;
        this.setMarker();

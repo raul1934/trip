@@ -50,7 +50,7 @@ export class HeaderComponent implements AfterViewInit {
   }
 
   private checkSmallBarVisible(){
-    if(Math.round(window.scrollY) > 150 || document.documentElement.clientWidth < 992){
+    if(Math.round(window.scrollY) > 150){
       this.smallBar = true
     }else{
       this.smallBar = false;

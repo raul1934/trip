@@ -1,156 +1,37 @@
 <app-header></app-header>
 <div class="bg-dark w-100 m-0">
   <div class="container pb-5">
-    <div class="search d-none d-lg-flex">
-      <h1>Search a city or country to start a trip.</h1>
-      <h2 class="d-none d-lg-block">Not sure where to go? Search and get inspired by trippers.</h2>
-      <app-search [scroolOnFocus]="true"></app-search>
+    <div class="d-flex flex-column justify-content-center align-items-center py-5" style="padding-top:5rem;">
+      <h1 class="f-25 lh-30 fw-400 color-FFFFFF text-center" style="max-width: 580px;"><span class="fw-200">We made easy</span> to to build travels and share the places, the knowledge and experiences behind it.</h1>
     </div>
-    <div class="galery pt-5">
-      <app-galery></app-galery>
+
+    <div class="d-flex flex-column justify-content-end align-items-end py-5">
+      <app-search  [scroolOnFocus]="true"></app-search>
     </div>
-    <div class="d-none d-lg-block">
-      <h1 class="f-25 fw-300 lh-20 color-FFFFFF text-center mt-5">Create all kind of trips and experiences to share and explore the world.</h1>
-      <p class="f-16 fw-300 lh-14 color-FFFFFF mt-3 mt-lg-2 text-center">Work with tourism? Welcome, <a [routerLink]="['trip/create']" class="start-a-trip-link">learn how to offer</a> better and personalized trips
-        for your costumers.</p>
-      <div class="row d-flex justify-content-center m-5 gap-3">
-        <a [routerLink]="['trip/create']" class="py-2 start-a-trip">
-          START A TRIP
+    <div >
+      <app-scroll-gallery class="places bg-dark py-4" style="">
+        <div appScrollGalleryItem class="item" (click)="activeIndex = 0" [ngClass]="{'item--active': activeIndex == 0 }"><b>Brasil</b> (213)</div>
+        <div appScrollGalleryItem class="item" (click)="activeIndex = 1" [ngClass]="{'item--active': activeIndex == 1 }"><b>Chile</b> (205)</div>
+        <div appScrollGalleryItem class="item" (click)="activeIndex = 2" [ngClass]="{'item--active': activeIndex == 2 }"><b>Spain</b> (178)</div>
+        <div appScrollGalleryItem class="item" (click)="activeIndex = 3" [ngClass]="{'item--active': activeIndex == 3 }"><b>France</b> (154)</div>
+        <div appScrollGalleryItem class="item" (click)="activeIndex = 4" [ngClass]="{'item--active': activeIndex == 4 }"><b>Italy</b> (123)</div>
+        <div appScrollGalleryItem class="item" (click)="activeIndex = 5" [ngClass]="{'item--active': activeIndex == 5 }"><b>Egypt</b> (92)</div>
+        <div appScrollGalleryItem class="item" (click)="activeIndex = 6" [ngClass]="{'item--active': activeIndex == 6 }"><b>United States</b> (87)</div>
+        <div appScrollGalleryItem class="item" (click)="activeIndex = 7" [ngClass]="{'item--active': activeIndex == 7 }"><b>Argentina</b> (73)</div>
+        <div appScrollGalleryItem class="item" (click)="activeIndex = 8" [ngClass]="{'item--active': activeIndex == 8 }"><b>Peru</b> (56)</div>
+      </app-scroll-gallery>
+
+      <div class="d-flex flex-wrap">
+        <a [routerLink]="['trip/view',123]" *ngFor="let _ of trips" class="trip-card">
+          <app-trip-card class="d-flex justify-content-center p-2"></app-trip-card>
         </a>
+        <ng-container *ngFor="let _ of [].constructor(qtdToRequest)">
+          <div *ngIf="loading" class="trip-card">
+            <app-trip-card  [isLoading]="loading" class="d-flex justify-content-center p-2"></app-trip-card>
+          </div>
+        </ng-container>
+      </div>
       </div>
     </div>
   </div>
-</div>
 
-<div class="container w-100 my-5 extraordinary-trips">
-  <div class="d-flex flex-column flex-lg-row justify-content-between align-items-center">
-    <div class="title">
-      The most extraordinaries trips around the world
-    </div>
-    <div class="subtitle">
-      We offer a platform for people and companies to create travel itineraries, offer services and products that make
-      the travel experience unique.
-    </div>
-  </div>
-
-  <div class="row my-5">
-    <div class="col-12 col-md-6">
-      <div class="row">
-        <div class="col">
-          <div class="image w-image">
-            <img loading="lazy" class="w-100 h-100" src="https://cdn.pixabay.com/photo/2015/01/07/15/51/woman-591576_1280.jpg" />
-            <div class="info">
-              <div class="name">Cap Rocat, Spain</div>
-              <div class="count"> 213 trips</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row mt-4">
-        <div class="col-6">
-          <div class="image t-image">
-            <img loading="lazy" class="w-100 h-100" src="https://cdn.pixabay.com/photo/2015/01/07/15/51/woman-591576_1280.jpg" />
-            <div class="info">
-              <div class="name">Cap Rocat, Spain</div>
-              <div class="count"> 213 trips</div>
-            </div>
-          </div>
-        </div>
-        <div class="col-6">
-          <div class="image t-image">
-            <img loading="lazy" class="w-100 h-100" src="https://cdn.pixabay.com/photo/2015/01/07/15/51/woman-591576_1280.jpg" />
-            <div class="info">
-              <div class="name">Cap Rocat, Spain</div>
-              <div class="count"> 213 trips</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-12 col-md-6 mt-3 mt-md-0">
-      <div class="row">
-        <div class="col-6">
-          <div class="image t-image">
-            <img loading="lazy" class="w-100 h-100" src="https://cdn.pixabay.com/photo/2015/01/07/15/51/woman-591576_1280.jpg" />
-            <div class="info">
-              <div class="name">Cap Rocat, Spain</div>
-              <div class="count"> 213 trips</div>
-            </div>
-          </div>
-        </div>
-        <div class="col-6">
-          <div class="image t-image">
-            <img loading="lazy" class="w-100 h-100" src="https://cdn.pixabay.com/photo/2015/01/07/15/51/woman-591576_1280.jpg" />
-            <div class="info">
-              <div class="name">Cap Rocat, Spain</div>
-              <div class="count"> 213 trips</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row mt-4">
-        <div class="col">
-          <div class="image w-image">
-            <img loading="lazy" class="w-100 h-100" src="https://cdn.pixabay.com/photo/2015/01/07/15/51/woman-591576_1280.jpg" />
-            <div class="info">
-              <div class="name">Cap Rocat, Spain</div>
-              <div class="count"> 213 trips</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="container">
-  <hr>
-</div>
-
-<div id="about" class="container w-100 my-5 how-we-work">
-  <h1 class="mt-3 mr-3">How we work</h1>
-  <div class="row">
-    <div class="col-lg-4 col-sm-6 mt-4">
-      <i class="ICON-ROT8_HEART mt-2"></i>
-      <h6 class="mt-2">For you, me and everybody who loves travel</h6>
-      <p class="mt-2">Create and organize your trips of an amazing way. Seriously, try it. It’s beautiful, smart and easy. Share your
-        trips with anyone you want, or not. You like an other person trip? Fine, just steal and make it yours with your
-        personal touch. Seriously, just try.</p>
-    </div>
-    <div class="col-lg-4 col-sm-6 mt-4">
-      <i class="ICON-CON1_AGENCY  mt-2"></i>
-      <h6 class="mt-2">For agencies</h6>
-      <p class="mt-2">You can create your trips with our platform and delivery a great experience to your costumers, help him decide
-        to buy your product. Also, you can allow him to personalize (or not) their trips itineraries with you.</p>
-    </div>
-    <div class="col-lg-4 col-sm-6 mt-4">
-      <i class="ICON-CON2_COMMERCIALTRIP mt-2"></i>
-      <h6 class="mt-2">For influencers
-        <i class="ICON-SOC1_YOUTUBE ml-2"></i>
-        <i class="ICON-SOC2_INSTAGRAM ml-2"></i>
-        <i class="ICON-SOC3_TIKTOK ml-2"></i>
-      </h6>
-      <p class="mt-2">Bring your content, create your trips and share an immersive experience of your path on the world. Here your
-        content is alive at each place where you created it. Use your itineraries to show and sell your services or just
-        to share your way of life.</p>
-    </div>
-    <div class="col-lg-4 col-sm-6 mt-4">
-      <i class="ICON-CON3_BUSINESS mt-2"></i>
-      <h6 class="mt-2">For business</h6>
-      <p class="mt-2">Don’t matter if you are big or small. Talk straight with people who are creating and making decisions for their
-        trips. Offer your services on itineraries that make sense for both of you. Suggest great ideas and help people
-        create a dream on.</p>
-    </div>
-  </div>
-</div>
-
-<div class="container">
-  <hr>
-</div>
-
-<div class="container w-100 my-5 more-about-us">
-  <h1 class="mt-3 mr-3">More About US</h1>
-  <app-stories class="mt-5"></app-stories>
-</div>
-<app-footer class="d-none d-lg-block"></app-footer>

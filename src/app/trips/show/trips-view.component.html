@@ -57,9 +57,10 @@
           (seeAllCliked)="seeAllLocations()"></app-nav-location>
       </div>
       <div #parent class="items-container" observeVisibility (observeVisibilityIndexChange)="currentLocationIndex($event)">
-        <ng-container *ngFor="let _ of [].constructor(10); let first = first; let last = last;">
+        <ng-container *ngFor="let tripDay of tripDays; let first = first; let last = last;">
           <div observeVisibilityItem class="trip-day">
-            <div class="trip-day__header py-2 d-flex" [class.trip-day__header--first]="first"
+            <div class="trip-day__header py-2 d-flex"
+              [class.trip-day__header--first]="first"
               [class.trip-day__header--last]="last">
               <div class="trip-day__header__date">
                 MON 03 OCT
@@ -69,10 +70,12 @@
                 Galapagos Island, Ecuador
               </div>
             </div>
-            <ng-container *ngFor="let _ of [].constructor(3)">
-              <app-flight (click)="openFlightInfoModal()"></app-flight>
-              <app-location (click)="openLocationInfoModal()"></app-location>
-              <app-air-bnb (click)="openAirBnbInfoModal()"></app-air-bnb>
+              <app-flight (click)="openFlightInfoModal(tripDay[0])" [active]="tripDay[0].active"></app-flight>
+              <app-location (click)="openLocationInfoModal(tripDay[1])" [active]="tripDay[1].active"></app-location>
+              <app-air-bnb (click)="openAirBnbInfoModal(tripDay[2])" [active]="tripDay[2].active"></app-air-bnb>
+
+            <ng-container *ngFor="let trip of tripDay">
+
             </ng-container>
           </div>
         </ng-container>

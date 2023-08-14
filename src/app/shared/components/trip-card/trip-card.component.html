@@ -21,16 +21,16 @@
   <div class="d-flex justify-content-center m-3 gap-3">
     <div class="d-flex justify-content-center align-items-center gap-1">
       <i class="ICON-SIT04_LIKE icon"></i>
-      <span class="f-10 fw-500 color-FFFFFF" [ngClass]="{'text-111B29':lightMode }">(250)</span>
+      <span class="f-10 fw-500" [ngClass]="{'color-111B29':lightMode, 'color-FFFFFF': !lightMode}">(250)</span>
     </div>
     <div class="d-flex justify-content-center align-items-center gap-1">
       <i class="ICON-PIN1_Normal icon"></i>
-      <span class="f-10 fw-500 color-FFFFFF" [ngClass]="{'text-111B29':lightMode }">250 Places</span>
+      <span class="f-10 fw-500" [ngClass]="{'color-111B29':lightMode, 'color-FFFFFF': !lightMode}">250 Places</span>
     </div>
   </div>
-  <h5 class="f-14 fw-700 color-FFFFFF mt-1" [ngClass]="{'text-111B29':lightMode }">Viva Paraty!</h5>
+  <h5 class="f-14 fw-700 mt-1" [ngClass]="{'color-111B29':lightMode, 'color-FFFFFF': !lightMode}">Viva Paraty!</h5>
   <p class="f-10 fw-400 m-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam viverra est et efficitur faucibus.</p>
-  <h6 class="f-12 f-500 color-FFFFFF mt-2" [ngClass]="{'text-111B29':lightMode }">Paraty, Brazil</h6>
+  <h6 class="f-12 f-500 mt-2" [ngClass]="{'color-111B29':lightMode, 'color-FFFFFF': !lightMode}">Paraty, Brazil</h6>
 </div>
 
 <div *ngIf="isLoading"  class="trip w-100 trip--loading">
@@ -56,7 +56,7 @@
   </div>
   <div class="d-flex flex-column gap-1">
     <div *skeleton="true; Height:'14px'; Width:'rand'; BorderRadius: '2px';" ></div>
-    <div *skeleton="true; Height:'20px'; Width:'90%'; BorderRadius: '2px';" ></div>
+    <div *skeleton="true; Height:'36px'; Width:'90%'; BorderRadius: '2px';" ></div>
     <div *skeleton="true; Height:'12px'; Width:'rand'; BorderRadius: '2px';" ></div>
   </div>
 

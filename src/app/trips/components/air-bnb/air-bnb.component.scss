@@ -1,7 +1,15 @@
 .air-bnb {
-  background-color: #183659;
   border-bottom: 1px solid #4f348c;
+  background-color: #183659;
   cursor: pointer;
+  width:100%;
+  display: block;
+  transition:  all .25s ease-in-out;
+
+    &--active{
+      background-color: #435C84;
+      transition:  all .25s ease-in-out;
+  }
 
   &__logo {
     width: 125px;

@@ -1,6 +1,6 @@
 <app-header-bar class="w-100"></app-header-bar>
 <div class="main">
-  <div class="search-page ">
+  <div class="search-page">
     <div class="container">
       <div class="row">
         <div class="col-12 col-xl-5">
@@ -25,7 +25,7 @@
 
         <div class="d-none d-xl-flex col-12 py-5 col-xl-7 py-lg-0">
           <div class="d-flex gap-2">
-            <div class="trip-card" *ngFor="let trip of [].constructor(3)">
+            <div class="trip-card-header" *ngFor="let trip of [].constructor(3)">
               <app-trip-card
                 [isLoading]="loading"
                 [aspectRatio]=".6/1"
@@ -37,21 +37,19 @@
         </div>
       </div>
     </div>
-    <div class="gallery w-100 mt-4 pt-5">
-      <div class="container w-100">
-        <div class="row no-gutters">
-          <div *ngFor="let item of trips" class="col-6 col-md-3 col-xl-2 p-2">
-            <div class="d-flex justify-content-center">
-              <app-trip-card></app-trip-card>
-            </div>
-          </div>
-          <ng-container *ngIf="loading">
-            <div *ngFor="let item of [].constructor(6)" class="col-6 col-md-3 col-xl-2 p-2">
-              <div class="d-flex justify-content-center">
-                <app-trip-card [isLoading]="loading"></app-trip-card>
+    <div class="bg-dark mt-5 pt-3">
+      <div class="container">
+        <div class="row">
+          <div class="d-flex flex-wrap w-100">
+           <a [routerLink]="['trip/view',123]" *ngFor="let _ of trips" class="trip-card">
+              <app-trip-card class="d-flex justify-content-center p-2"></app-trip-card>
+            </a>
+            <ng-container *ngFor="let _ of [].constructor(qtdToRequest)">
+              <div *ngIf="loading" class="trip-card">
+                <app-trip-card  [isLoading]="loading" class="d-flex justify-content-center p-2"></app-trip-card>
               </div>
-            </div>
-          </ng-container>
+            </ng-container>
+          </div>
         </div>
       </div>
     </div>

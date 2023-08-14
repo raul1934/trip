@@ -218,6 +218,7 @@ export class TripsCreateComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     this.setAllMarkers();
     this.tripsCreateStepsService.close();
+    this.showTutorial();
   }
 
   getBounds(markers: any) {
@@ -322,6 +323,9 @@ export class TripsCreateComponent implements AfterViewInit {
       this.airBnbInfoVisible = true;
        this.setMarker();
     },300);
+  }
+
+  showTutorial(){
   }
 
 }

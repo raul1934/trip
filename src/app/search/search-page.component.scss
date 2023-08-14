@@ -129,9 +129,30 @@ app-header-bar {
   }
 }
 
-.trip-card {
+.trip-card-header {
   cursor: pointer;
   width: 200px;
+}
+
+.trip-card {
+  width: 20%;
+  min-width: 20%;
+  text-decoration: none;
+
+  @media (max-width: 1196px) {
+    width: 25%;
+    min-width: 25%;
+  }
+
+  @media (max-width: 996px) {
+    width: 33%;
+    min-width: 33%;
+  }
+
+  @media (max-width: 768px) {
+    width: 50%;
+    min-width: 50%;
+  }
 }
 
 

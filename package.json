@@ -1,5 +1,5 @@
 {
-  "name": "thetripcompany",
+  "name": "walvee",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -10,6 +10,7 @@
   },
   "private": true,
   "dependencies": {
+    "@angular-devkit/schematics-cli": "^16.2.0",
     "@angular/animations": "^15.2.9",
     "@angular/common": "^15.0.0",
     "@angular/compiler": "^15.0.0",
@@ -18,7 +19,9 @@
     "@angular/google-maps": "^15.2.9",
     "@angular/platform-browser": "^15.0.0",
     "@angular/platform-browser-dynamic": "^15.0.0",
+    "@angular/pwa": "^15.2.9",
     "@angular/router": "^15.0.0",
+    "@angular/service-worker": "^15.0.0",
     "@techiediaries/ngx-qrcode": "^9.1.0",
     "ngx-drag-scroll": "^15.0.0",
     "rxjs": "~7.5.0",
@@ -27,7 +30,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^15.0.2",
-    "@angular/cli": "~15.0.2",
+    "@angular/cli": "^16.2.0",
     "@angular/compiler-cli": "^15.0.0",
     "@types/jasmine": "~4.3.0",
     "jasmine-core": "~4.5.0",

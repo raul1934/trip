@@ -25,9 +25,14 @@
           <i class="ICON-ROT1_CALENDAR days__add__icon f-22"></i>
         </div>
       </div>
+      <div appScrollGalleryItem id="teste123123" class="days__day d-flex flex-column align-items-center justify-content-center mx-4" [ngClass]="{'days__day--active':selectedLocationIndex == 0}" (click)="selectedLocationIndex = 0">
+        <h5 class="f-12 lh-13 fw-700 mb-1 text-nowrap">Day {{ (0 + 1) | number:'2.0' }}</h5>
+        <h6 class="f-10 lh-13 fw-400">France</h6>
+      </div>
+
       <ng-container *ngFor="let _ of [].constructor(9); let index = index;">
         <div appScrollGalleryItem class="days__day d-flex flex-column align-items-center justify-content-center mx-4" [ngClass]="{'days__day--active':selectedLocationIndex == index}" (click)="selectedLocationIndex = index">
-          <h5 class="f-12 lh-13 fw-700 mb-1 text-nowrap">Day {{ (index + 1) | number:'2.0' }}</h5>
+          <h5 class="f-12 lh-13 fw-700 mb-1 text-nowrap">Day {{ (index + 2) | number:'2.0' }}</h5>
           <h6 class="f-10 lh-13 fw-400">France</h6>
         </div>
       </ng-container>

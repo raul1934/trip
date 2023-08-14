@@ -3,6 +3,10 @@
   border-bottom: 1px solid #4f348c;
   cursor: pointer;
 
+  &--active{
+    background-color: #435C84;
+  }
+
   &__logo {
     width: 125px;
 
