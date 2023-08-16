@@ -1,7 +1,7 @@
 {
   "name": "walvee",
   "short_name": "walvee",
-  "theme_color": "#1976d2",
+  "theme_color": "#0B131E",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "./",
