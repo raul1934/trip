@@ -3,9 +3,9 @@
   "short_name": "walvee",
   "theme_color": "#0B131E",
   "background_color": "#0b131e",
-  "display": "standalone",
-  "scope": "./",
-  "start_url": "./",
+  "display": "fullscreen",
+  "scope": "/",
+  "start_url": "/",
   "icons": [
     {
       "src": "assets/icons/icon-72x72.png",
