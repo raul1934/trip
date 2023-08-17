@@ -2,7 +2,7 @@
   "name": "walvee",
   "short_name": "walvee",
   "theme_color": "#0B131E",
-  "background_color": "#fafafa",
+  "background_color": "#0b131e",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",
@@ -55,5 +55,14 @@
       "type": "image/png",
       "purpose": "maskable any"
     }
+  ],
+  "lang": "en",
+  "orientation": "portrait-primary",
+  "categories": [
+    "entertainment",
+    "lifestyle",
+    "photo",
+    "social",
+    "travel"
   ]
 }
